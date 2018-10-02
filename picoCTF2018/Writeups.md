@@ -24,5 +24,4 @@ Descargamos el archivo y aplicamos el comando **strings store** para ver las str
 
 Revisando los strings que contiene observamos la flag que necesitamos :D
 
-
 ![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/store2.png)
