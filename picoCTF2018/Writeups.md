@@ -1,4 +1,4 @@
-# Algunos writeups del CTF picoCTF
+# Writeups de picoCTF2018
 
 ## admin panel - Points: 150
 Nos solicita que encontremos el password del admin
