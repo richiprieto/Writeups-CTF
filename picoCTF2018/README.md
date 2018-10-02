@@ -6,7 +6,7 @@ Nos solicita que encontremos el password del admin
 
 ![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/adminpanel.png)
 
-Lo que hacemos es abrir el archivo con Wireshark, el cual nos permite ver los paquetes que han sido capturados, encontramos un paquete que contiene un login mediante post
+Lo que hacemos es abrir el archivo con [Wireshark](https://www.wireshark.org/), el cual nos permite ver los paquetes que han sido capturados, encontramos un paquete que contiene un login mediante post
 
 ![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/adminpanel1.png)
 
@@ -80,3 +80,40 @@ Luego de ejecutar vamos a la carpeta output y vemos entre varios archivos de ani
 Finalmente obtenemos la flag, personalmente me agrado mucho debido a que en ningún anterior ctf me habian solicitado recuperar archivos para encontrar la tan deseada recompensa.
 
 ![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/rfs6.png)
+
+## The Vault - Points: 250
+
+En el ejercicio The Vault nos piden loguearnos en una pagina web, no tenemos ningun hint
+
+![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/vault.png)
+
+En la pagina web nos da un login y además el codigo en php de la pagina
+
+![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/vault1.png)
+
+Intentamos con el user admin y password admin y observamos que hace una consulta directa al SQL
+
+![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/vault2.png)
+
+Por lo que procedemos a intentar un sqlinjection **'or '1'='1** pero nos dice que fue detectado un intento de sql injection
+
+![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/vault3.png)
+
+Revisando el codigo php nos damos cuenta que solo tiene validacion para el campo username por lo que intentamos el sql injection en el campo password
+
+![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/vault4.png)
+
+Genial!!! colocando en el campo username cualquier valor y en el campo password el sqli **'or '1'='1**  obtenemos nuestra flag
+
+![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/vault5.png)
+
+## What's My Name? - Points: 250
+
+Este reto nos da un archivo .pcap que lo podemos abrir con [Wireshark](https://www.wireshark.org/) y en el hint nos dice "como nosotros sabemos el nombre del dominio?"
+
+![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/myname.png)
+![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/myname1.png)
+
+Al abrir el archivo debemos hacer un filtro para conocer los dnsserver a los que se a comunicado  y encontramos nuestra flag
+
+![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/myname2.png)
