@@ -117,3 +117,7 @@ Este reto nos da un archivo .pcap que lo podemos abrir con [Wireshark](https://w
 Al abrir el archivo debemos hacer un filtro para conocer los dnsserver a los que se a comunicado  y encontramos nuestra flag
 
 ![alt text](https://github.com/richiprieto/Writeups-CTF/blob/master/picoCTF2018/imagenes/myname2.png)
+
+## Safe RSA - Points: 250
+
+Uno de los retos que personalmente más me gustó.
