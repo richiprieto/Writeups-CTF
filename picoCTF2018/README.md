@@ -120,4 +120,5 @@ Al abrir el archivo debemos hacer un filtro para conocer los dnsserver a los que
 
 ## Safe RSA - Points: 250
 
-Uno de los retos que personalmente más me gustó.
+Uno de los retos que personalmente más me gustó. Completar...
+https://crypto.stackexchange.com/questions/33561/cube-root-attack-rsa-with-low-exponent
