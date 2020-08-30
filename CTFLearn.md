@@ -45,3 +45,23 @@
     - Vemos una función que valida la clave, dicha función compara la entrada con un valor que está en formato md5 por lo que se puede crackear mediante https://hashes.com/en/decrypt/hash
     - Una vez con este texto simplemente procedemos a hacer la unión que se encuentra en el código
     - ```CTFlearn{\<clavemd5crackeada\>_is_not_secure!}``` y listo
+- **5x5 Crypto**
+  - Nos habla de una criptografia en matriz 5x5 y nos pasa las direcciónes del código
+  - Una rápida busqueda nos lleva a https://en.wikipedia.org/wiki/Tap_code
+  - El reto se puede resolver manualmente, pero siempre es preferible escribir código
+  - ```python
+    cipher = [["A", "B", "C/K", "D", "E"],
+         ["F", "G", "H", "I", "J"],
+         ["L", "M", "N", "O", "P"],
+         ["Q", "R", "S", "T", "U"],
+         ["V", "W", "X", "Y", "Z"]]
+    codigo = "1-3,4-4,2-1,{,4-4,2-3,4-5,3-2,1-2,4-3,_,4-5,3-5,}"
+    codigo = codigo.split(",")
+    flag = ''
+    for value in codigo:
+      if len(value) > 1:
+        flag += cipher[int(value[0])-1][int(value[-1])-1]
+      else:
+        flag += value
+    print(flag)
+    ```
